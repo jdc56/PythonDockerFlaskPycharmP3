@@ -66,7 +66,7 @@ def form_insert_post():
     inputData = (request.form.get('LatD'), request.form.get('LatM'), request.form.get('LatS'),
                  request.form.get('NS'), request.form.get('LonD'),
                  request.form.get('LonM'), request.form.get('LonS'), request.form.get('EW'),
-                 request.form.get('City'), request.form.get('State'), city_id)
+                 request.form.get('City'), request.form.get('State'))
     sql_insert_query = """INSERT INTO tblCitiesImport (LatD,LatM,LatS,NS,LonD,LonM,LonS,EW,City,State)
     VALUES (%s, %s,%s, %s,%s, %s,%s, %s,%s, %s) """
     cursor.execute(sql_insert_query, inputData)
