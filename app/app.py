@@ -44,11 +44,12 @@ def form_edit_get(city_id):
 @app.route('/edit/<int:city_id>', methods=['POST'])
 def form_update_post(city_id):
     cursor = mysql.get_db().cursor()
-    inputData = (request.form.get('fldName'), request.form.get('fldLat'), request.form.get('fldLong'),
-                 request.form.get('fldCountry'), request.form.get('fldAbbreviation'),
-                 request.form.get('fldCapitalStatus'), request.form.get('fldPopulation'), city_id)
-    sql_update_query = """UPDATE tblCitiesImport t SET t.fldName = %s, t.fldLat = %s, t.fldLong = %s, t.fldCountry = 
-    %s, t.fldAbbreviation = %s, t.fldCapitalStatus = %s, t.fldPopulation = %s WHERE t.id = %s """
+    inputData = (request.form.get('LatD'), request.form.get('LatM'), request.form.get('LatS'),
+                 request.form.get('NS'), request.form.get('LonD'),
+                 request.form.get('LonM'), request.form.get('LonS'), request.form.get('EW'),
+                 request.form.get('City'), request.form.get('State'), city_id)
+    sql_update_query = """UPDATE tblCitiesImport t SET t.LatD = %s, t.LatM = %s, t.LatS = %s, t.NS = 
+    %s, t.LonD = %s, t.LonM = %s, t.LonS = %s, t.EW = %s, t.City = %s,  t.State = %s WHERE t.id = %s """
     cursor.execute(sql_update_query, inputData)
     mysql.get_db().commit()
     return redirect("/", code=302)
@@ -62,10 +63,11 @@ def form_insert_get():
 @app.route('/cities/new', methods=['POST'])
 def form_insert_post():
     cursor = mysql.get_db().cursor()
-    inputData = (request.form.get('fldName'), request.form.get('fldLat'), request.form.get('fldLong'),
-                 request.form.get('fldCountry'), request.form.get('fldAbbreviation'),
-                 request.form.get('fldCapitalStatus'), request.form.get('fldPopulation'))
-    sql_insert_query = """INSERT INTO tblCitiesImport (fldName,fldLat,fldLong,fldCountry,fldAbbreviation,fldCapitalStatus,fldPopulation) VALUES (%s, %s,%s, %s,%s, %s,%s) """
+    inputData = (request.form.get('LatD'), request.form.get('LatM'), request.form.get('LatS'),
+                 request.form.get('NS'), request.form.get('LonD'),
+                 request.form.get('LonM'), request.form.get('LonS'), request.form.get('EW'),
+                 request.form.get('City'), request.form.get('State'), city_id)
+    sql_insert_query = """INSERT INTO tblCitiesImport (LatD,LatM,LatS,NS,LonD,LonM,LonS,EW,City,State) VALUES (%s, %s,%s, %s,%s, %s,%s, %s,%s, %s) """
     cursor.execute(sql_insert_query, inputData)
     mysql.get_db().commit()
     return redirect("/", code=302)

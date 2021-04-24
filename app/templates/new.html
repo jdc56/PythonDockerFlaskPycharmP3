@@ -3,43 +3,58 @@
 <form action="/cities/new" method="POST">
     <div class="row">
         <div class="col">
-            <label for="fldName">City Name</label>
-            <input id="fldName" type="text" class="form-control" placeholder="City Name" name="fldName">
+            <label for="LatD">Latitude Degrees</label>
+            <input id="LatD" type="text" class="form-control" placeholder="Latitude Degrees" name="LatD" value="{{city.LatD}}">
         </div>
         <div class="col">
-            <label for="fldAbbreviation">City Abbreviation</label>
-            <input id="fldAbbreviation" t ype="text" class="form-control" placeholder="City Abbreviation"
-                   name="fldAbbreviation">
+            <label for="LatM">Latitude Minutes</label>
+            <input id="LatM" type="text" class="form-control" placeholder="Latitude Minutes"
+                   name="LatM" value="{{city.LatM}}">
         </div>
         <div class="col">
-            <label for="fldCountry">City Country</label>
-            <input id="fldCountry" type="text" class="form-control" placeholder="City Country" name="fldCountry">
+            <label for="LatS">Latitude Seconds</label>
+            <input id="LatS" type="text" class="form-control" placeholder="Latitude Seconds"
+                   name="LatS" value="{{city.LatS}}">
+        </div>
+        <div class="col">
+            <label for="NS">North South</label>
+            <input id="NS" type="text" class="form-control" placeholder="NS" name="NS" value="{{city.NS}}">
         </div>
     </div>
 
     <div class="row">
         <div class="col">
-            <label for="fldLat">City Latitude</label>
-            <input id="fldLat" type="text" class="form-control" placeholder="City Latitude" name="fldLat">
+            <label for="LonD">Longitude Degrees</label>
+            <input id="LonD" type="text" class="form-control" placeholder="Longitude Degrees" name="LonD" value="{{city.LonD}}">
         </div>
         <div class="col">
-            <label for="fldlong">City Longitude</label>
-            <input id="fldlong" type="text" class="form-control" placeholder="City Longitude" name="fldLong">
+            <label for="LonM">Longitude Minutes</label>
+            <input id="LonM" type="text" class="form-control" placeholder="Longitude Minutes"
+                   name="LonM" value="{{city.LonM}}">
+        </div>
+        <div class="col">
+            <label for="LonS">Longitude Seconds</label>
+            <input id="LonS" type="text" class="form-control" placeholder="Longitude Seconds"
+                   name="LonS" value="{{city.LonS}}">
+        </div>
+        <div class="col">
+            <label for="EW">East West</label>
+            <input id="EW" type="text" class="form-control" placeholder="EW" name="EW" value="{{city.EW}}">
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <label for="fldCapitalStatus">Capital Status</label>
+            <label for="City">City</label>
 
-            <input id="fldCapitalStatus" type="text" class="form-control" placeholder="Capital Status "
-                   name="fldCapitalStatus">
+            <input id="City" type="text" class="form-control" placeholder="City"
+                   name="City" value="{{city.City}}">
         </div>
         <div class="col">
-            <label for="fldPopulation">City Population</label>
-            <input id="fldPopulation" type="text" class="form-control" placeholder="Population" name="fldPopulation">
+            <label for="State">State</label>
+            <input id="State" type="text" class="form-control" placeholder="State" name="State" value="{{city.State}}">
         </div>
     </div>
-    <button type="submit" class="btn btn-success">Success</button>
+    <button type="submit" class="btn btn-success">Create</button>
 
 </form>
 
