@@ -58,6 +58,7 @@ def form_insert_get():
     return render_template('new.html', title='New City Form')
 
 
+
 @app.route('/cities/new', methods=['POST'])
 def form_insert_post():
     cursor = mysql.get_db().cursor()
